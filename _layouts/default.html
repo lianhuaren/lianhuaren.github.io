@@ -1,71 +1,49 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="lianhuaren" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="{{ site.author.name }}" />
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="viewport" content="width=device-width" />
 
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="alternate" href="/rss.xml" title="{{ site.title }}" type="application/rss+xml" />
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/syntax.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </head>
+
 <body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">lianhuaren</a>
-    <a class="extra" href="/">home</a>
-  </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        lianhuaren<br />
-
-      </p>
+<div>
+    <div id="head">
+        <div id="logo">
+            <div class="blogname"><a href="/">{{ site.blog_name }}</a></div>
+            <div class="blogdesc">{{ site.blog_desc }}<a href="/rss.xml"><img class="rss" src="/static/images/rss.png" alt="rss" /></a></div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="/tags.html" title="分类">== 分类</a></li>
+                <li><a href="/archives.html" title="归档">== 归档</a></li>
+                <li><a href="/about.html" title="关于">== 关于</a></li>
+            </ul>
+        </div>
     </div>
 
-  </div>
+    <div id="main">
+        <div id="begin">{% if page.motto %}{{ page.motto }}{% else %}{{ site.default_motto }}{% endif %}</div>
+        <div id="contain">
+{{ content }}
+        </div>
+        <div id="foot">
+            <p>{{ site.copyright }}, theme modified from <a href="http://www.zhanxin.info/jekyll/2012-11-14-the-one-theme.html">theOne</a>.</p>
+            <p>Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="https://github.com">GitHub</a>.</p>
+        </div>
+    </div>
+    <div id="toTop" style="display:none;">⇪</div>
 </div>
 
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
+<script src="/static/js/toTop.js" type="text/javascript"></script>
 
 </body>
 </html>
